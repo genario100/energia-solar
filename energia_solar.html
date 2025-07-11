@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vantagens da Energia Solar</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .hero {
+      background: linear-gradient(135deg, #ffcc70, #ff8c42);
+      color: white;
+      padding: 60px 0;
+      text-align: center;
+    }
+    .card {
+      border: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .footer {
+      background-color: #343a40;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="container">
+      <h1 class="display-4">Descubra as Vantagens da Energia Solar</h1>
+      <p class="lead">Economize, valorize seu imóvel e ajude o planeta com placas solares.</p>
+    </div>
+  </section>
+
+  <section class="container py-5">
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="card p-4">
+          <h5 class="card-title">Economia na Conta</h5>
+          <p class="card-text">Reduza sua conta de energia em até 95% com um sistema bem dimensionado.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card p-4">
+          <h5 class="card-title">Retorno Garantido</h5>
+          <p class="card-text">Recupere seu investimento em até 7 anos e tenha lucro pelos próximos 20 anos.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card p-4">
+          <h5 class="card-title">Valorização do Imóvel</h5>
+          <p class="card-text">Casas e comércios com energia solar são mais valorizados no mercado.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card p-4">
+          <h5 class="card-title">Sustentabilidade</h5>
+          <p class="card-text">Ajude o planeta gerando energia limpa e renovável sem poluição.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card p-4">
+          <h5 class="card-title">Baixa Manutenção</h5>
+          <p class="card-text">Sistema durável, com limpeza simples e pouca manutenção anual.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card p-4">
+          <h5 class="card-title">Incentivos e Financiamento</h5>
+          <p class="card-text">Aproveite linhas de crédito especiais e isenções de impostos em vários estados.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container py-5">
+    <h2 class="mb-4 text-center">Simule Sua Economia</h2>
+    <form id="calcForm" class="row g-3 justify-content-center">
+      <div class="col-md-4">
+        <label for="gastoMensal" class="form-label">Gasto mensal com energia (R$)</label>
+        <input type="number" class="form-control" id="gastoMensal" placeholder="Ex: 450" required>
+      </div>
+      <div class="col-md-4">
+        <label for="duracao" class="form-label">Anos de uso (ex: 25)</label>
+        <input type="number" class="form-control" id="duracao" placeholder="Ex: 25" required>
+      </div>
+      <div class="col-md-4 text-center">
+        <button type="submit" class="btn btn-primary mt-4">Calcular Economia</button>
+      </div>
+    </form>
+    <div id="resultado" class="mt-4 text-center fs-5 fw-bold"></div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Energia Solar Brasil. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("calcForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const gasto = parseFloat(document.getElementById("gastoMensal").value);
+      const anos = parseInt(document.getElementById("duracao").value);
+      const economia = gasto * 12 * anos * 0.95;
+      document.getElementById("resultado").innerText =
+        `Economia estimada em ${anos} anos: R$ ${economia.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
+    });
+  </script>
+</body>
+</html>
